@@ -11,6 +11,7 @@ export class UsuariosComponent implements OnInit {
 //variables globales
 verf = false;
 usuario: any;
+iduser: any;
 
 userr={
   nombre:"",
@@ -33,6 +34,9 @@ mostrar(dato:any) {
 switch(dato){
   case 0:
   this.verf = false;
+  this.beditar = false;
+  this.iduser = "";
+  this.limpiar();
   break;
   case 1:
   this.verf = true;
@@ -53,6 +57,7 @@ validnombre = true;
 validusuario = true;
 validclave = true;
 validtipo = true;
+beditar = false;
 
 //validar
 validar(){
@@ -161,5 +166,33 @@ borrarusuario(id:any){
   });
 }
 
+cargardatos(datos:any, id:number) {
+//console.log(datos);
+this.userr.nombre = datos.nombre;
+this.userr.usuario = datos.usuario;
+this.userr.clave = datos.clave;
+this.userr.tipo = datos.tipo;
+this.iduser = id;
+this.mostrar(1);
+this.beditar=true;
+}
+
+editar(){
+  this.validar();
+
+if (this.validnombre==true && this.validusuario==true && this.validclave==true && this.validtipo==true) {
+  this.suser.editar(this.userr, this.iduser).subscribe((datos:any)=> {
+    if (datos['resultado']=='OK') {
+
+    this.consulta();
+    }
+
+      }
+
+      );
+      this.mostrar(0);
+
+}
+}
 
 }
