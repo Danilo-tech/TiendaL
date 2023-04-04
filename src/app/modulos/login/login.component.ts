@@ -32,7 +32,19 @@ user = {
     this.slogin.consultar(this.email,this.clave).subscribe((result:any) =>
       {
         this.usuario = result;
-        console.log(this.usuario);
+        //console.log(this.usuario);
+
+if (this.usuario[0].validar=="valida") {
+console.log("entro");
+sessionStorage.setItem('id',this.usuario[0].id_usuario);
+sessionStorage.setItem('nombre',this.usuario[0].nombre);
+sessionStorage.setItem('tipo',this.usuario[0].tipo);
+this.router.navigate(['dashboard']);
+} else {
+console.log("no entro");
+this.error=true;
+}
+
       }
     )
     }
