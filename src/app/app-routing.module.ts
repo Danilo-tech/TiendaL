@@ -5,6 +5,7 @@ import { DashboardComponent } from './modulos/dashboard/dashboard.component';
 import { UsuariosComponent } from './modulos/usuarios/usuarios.component';
 import { LoginComponent } from './modulos/login/login.component';
 import { ValidaruserGuard } from './guards/validaruser.guard';
+import { ProductoComponent } from './modulos/producto/producto.component';
 
 
 
@@ -15,6 +16,7 @@ const routes: Routes = [
       children:[
         {path:'dashboard', component:DashboardComponent},
         {path:'usuarios', component:UsuariosComponent},
+        {path:'productos', component:ProductoComponent},
         {path:'', redirectTo: '/dashboard', pathMatch:'full'},
        /*  {path:'usuarios', component:UsuariosComponent}, */
       ]

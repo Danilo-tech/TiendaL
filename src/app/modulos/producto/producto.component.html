@@ -1,0 +1,96 @@
+<h1>PRODUCTOS</h1>
+<button class="btn btn-primary" (click)="mostrar(1)">Insertar Producto</button>
+<br><br>
+<!-- <div id="formulario" *ngIf="verf==true">
+
+  <div class="row
+  ">
+<div class="col-lg-6">
+  <input type="text" id="nombre" class="form-control" [(ngModel)]="userr.nombre">
+  <br>
+  <span style="color: red;" *ngIf="validnombre==false"> Insertar Nombre</span>
+</div>
+<div class="col-lg-6">
+  <input type="email" id="usuario" class="form-control"[(ngModel)]="userr.usuario">
+  <br>
+  <span style="color: red;" *ngIf="validusuario==false"> Insertar Usuario</span>
+</div>
+</div>
+<div class="row
+">
+<div class="col-lg-6">
+  <input type="password" id="clave" class="form-control" [(ngModel)]="userr.clave">
+  <br>
+  <span style="color: red;" *ngIf="validclave==false"> Insertar Clave</span>
+</div>
+<div class="col-lg-6">
+  <select id="tipo" class="form-control form-select" [(ngModel)]="userr.tipo">
+    <option value="admin" label="admin">admin</option>
+    <option value="empleado" label="empleado">empleado</option>
+    <option value="cliente" label="cliente">cliente</option>
+  </select>
+  <br>
+  <span style="color: red;" *ngIf="validtipo==false"> Insertar tipo</span>
+</div>
+</div>
+<div class="row
+">
+<div class="col-lg-3"></div>
+<div class="col-lg-3">
+  <button *ngIf="beditar==false" class="btn btn-primary" (click)="ingresar()">Guardar</button>
+  <button *ngIf="beditar==true" class="btn btn-primary" (click)="editar()" >Editar</button>
+
+</div>
+<div class="col-lg-3">
+  <button class="btn btn-secondary" (click)="mostrar(0)" >Cancelar</button>
+</div>
+<div class="col-lg-3"></div>
+</div>
+
+</div> -->
+
+<div id="formulario">
+
+</div>
+
+<br>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <tr>
+      <th>Código</th>
+      <th>Nombre</th>
+      <th>Categoría</th>
+      <th>Valor Compra</th>
+      <th>Valor de Venta</th>
+      <th>Stock</th>
+      <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let item of producto">
+      <td>{{item.codigo}}</td>
+      <td>{{item.nombre}}</td>
+      <td>{{item.ncategoria}}</td>
+      <td>$ {{item.v_compra}}</td>
+      <td>$ {{item.v_venta}}</td>
+      <td>{{item.stock}}</td>
+      <td>
+
+       <!--  <a (click)="cargardatos(item, item.id_usuario)" >
+          <span class="fas fa-edit editar" title="editar"></span>
+        </a>
+
+
+        <a (click)="pregunta(item.id_usuario, item.nombre)">
+        <span class="fas fa-trash-alt eliminar" title="eliminar"></span>
+        </a> -->
+
+        <a href="">
+          <span class="fas fa-edit editar" title="editar"></span>
+        </a>
+        <a href="">
+          <span class="fas fa-trash-alt eliminar" title="eliminar"></span>
+        </a>
+
+      </td>
+    </tr>
+  </table>
+</div>
